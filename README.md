@@ -79,14 +79,7 @@ Follow the prompts to set up a user with access to the admin panel.
 python manage.py runserver
 ```
 
-Visit: [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
+Visit: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 Log in with the superuser credentials created in step 5.
-
-## 🧾 License
-
-This project is licensed under the [MIT License](LICENSE). Feel free to use and modify it.
-
-## ✨ Credits
-
-Project by [@melomatheuss](https://github.com/melomatheuss) for learning and portfolio purposes.
+😎👍
