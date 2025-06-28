@@ -17,16 +17,16 @@ All are registered in Django Admin with customized fields and structure.
 - Python 3.10+
 - Django 5.x
 - Jazzmin (to customize the Django Admin interface)
+- Docker + Docker Compose
 
 ## ✅ Requirements
 
 Before getting started, make sure you have:
 
-- [Python 3.10+](https://www.python.org/downloads/)
-- [Git](https://git-scm.com/)
-- `pip` (Python package manager)
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
 
-## 🚀 How to Run the Project Locally
+## 🚀 How to Run the Project with Docker
 
 ### 1. Clone the repository
 
@@ -35,51 +35,41 @@ git clone https://github.com/melomatheuss/Django-admin-project-SGP.git
 cd Django-admin-project-SGP
 ```
 
-### 2. Create and activate a virtual environment
+### 2. Build and start the application
 
 ```bash
-python -m venv venv
+docker-compose up --build
 ```
 
-- **Linux/macOS:**
+This will:
+
+- Build the Docker image
+- Install dependencies
+- Apply database migrations
+- Start the development server on `http://localhost:8000`
+
+### 3. Create a superuser (in a new terminal tab)
+
+In a **new terminal tab or window**, run:
 
 ```bash
-source venv/bin/activate
+docker-compose run web python manage.py createsuperuser
 ```
 
-- **Windows:**
+Follow the prompts to set up a user with access to the Django Admin.
 
-```bash
-venv\Scripts\activate
-```
+### 4. Access the Admin Panel
 
-### 3. Install the dependencies
+Visit: [http://localhost:8000/admin](http://localhost:8000/admin)
 
-```bash
-pip install -r requirements.txt
-```
+Log in using the superuser credentials created in the previous step.
 
-### 4. Apply migrations
+## 🧾 License
 
-```bash
-python manage.py migrate
-```
+This project is licensed under the [MIT License](LICENSE). Feel free to use and modify it.
 
-### 5. Create a superuser
+## ✨ Credits
 
-```bash
-python manage.py createsuperuser
-```
+Project by [@melomatheuss](https://github.com/melomatheuss) for learning and portfolio purposes.
 
-Follow the prompts to set up a user with access to the admin panel.
-
-### 6. Start the development server
-
-```bash
-python manage.py runserver
-```
-
-Visit: [http://127.0.0.1:8000](http://127.0.0.1:8000)
-
-Log in with the superuser credentials created in step 5.
 😎👍
